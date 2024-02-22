@@ -1,0 +1,64 @@
+{% extends "base.html" %}
+{% block title %}Tabla autores{% endblock %}
+{% block content %}
+   <div style="text-align: center; max-width: 800px; margin: 0 auto;">
+      <table style="width: 80%; border-collapse: collapse; border: 1px solid #ddd;">
+         <tr>
+            <th style="border: 1px solid #ddd; padding: 12px; width: 10%;">ID</th>
+            <th style="border: 1px solid #ddd; padding: 12px;">AUTOR</th>
+            <th style="border: 1px solid #ddd; padding: 12px;">PAIS</th>
+         </tr>
+         {% for autor in autores %}
+         <tr>
+            <td style="border: 1px solid #ddd; padding: 12px;">{{ autor.id }}</td> 
+            <td style="border: 1px solid #ddd; padding: 12px; white-space: nowrap;">{{ autor.autor }}</td> 
+            <td style="border: 1px solid #ddd; padding: 12px; white-space: nowrap;">{{ autor.pais }}</td>
+         </tr>
+         {% endfor %}
+      </table>
+   </div>
+   <br/>
+   <div style="border: 1px;"></div>
+   </table>
+</div>
+<br />
+<div style="border: 1px;">
+<form action="/addAutor" method="post">
+  <label for="autor">Autor</label>
+  <input type="text" name="autor" id="" value="" />
+  <label for="pais">Pais</label>
+  <input type="text" name="pais" value="" />
+  <input type="submit" value="Add" />
+</form>
+</div>
+
+<br />
+<form action="/delAutor" method="post">
+<label for="autor">ID</label>
+<select name="id">
+  {% for autor in autores %}
+  <option value="{{autor.id}}">{{autor.id}}</option>
+  {% endfor %}
+</select>
+<input type="submit" value="Borrar" />
+</form>
+
+<br />
+<form action="/updateAutor" method="post">
+<label for="autor">ID</label>
+<select name="id">
+  {% for autor in autores %}
+  <option value="{{autor.id}}">{{autor.id}}</option>
+  {% endfor %}
+</select>
+
+
+<label for="autor">Autor</label>
+<input type="text" name="autor" id="" value="" />
+<label for="pais">Pais</label>
+<input type="text" name="pais" value="" />
+<input type="submit" value="update" />
+</form>
+
+
+{% endblock %}

@@ -1,0 +1,105 @@
+body {
+  background-color: rgb(240, 175, 35);
+  background-image: radial-gradient(farthest-corner at 60% 55%, rgb(255, 94, 0), rgb(255, 136, 0), rgb(250, 132, 11));
+}
+
+header {
+  background-color: rgb(255, 169, 57);
+  background-image: linear-gradient(to bottom right, rgb(255, 115, 0), rgb(255, 187, 0));
+
+}
+
+li {
+  font-size: large;
+  font-weight: bold;
+
+}
+
+footer {
+  background-color: rgb(255, 169, 57);
+  background-image: linear-gradient(to bottom right, rgb(255, 115, 0), rgb(255, 187, 0));
+  text-align: center;
+  height: 100px;
+  padding-top: 30px;
+  padding-bottom: 50px;
+  clear: both;
+}
+
+h2 {
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-weight: bold;
+  font-style: italic;
+  text-align: center;
+
+}
+
+table {
+  background-color: #db9511;
+  display: inline-block;
+  border-radius: 20px;
+  box-shadow: 0 0 0 1px #646464, 0 0 0 30px #ccc, 0 0 0 32px #646464;
+  margin: 40px;
+}
+
+main {
+  width: 70%;
+  float: left;
+}
+
+a:hover {
+  color: black;
+  text-decoration: underline;
+}
+
+article {
+  padding-bottom: 20px;
+  text-align: center;
+  float: left;
+  width: 80%;
+
+}
+
+aside {
+  float: right;
+
+
+}
+
+aside img:hover {
+  opacity: 0.5;
+}
+
+.social-icon {
+  margin-right: 20px;
+}
+
+
+.opiniones-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.opinion {
+  border: 1px solid #ddd;
+  padding: 15px;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+}
+
+.opinion-text {
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+.autor {
+  font-style: italic;
+  color: #555;
+}
+
+.opinion-img {
+  max-width: 30%; 
+  height: auto;  
+}
+
+

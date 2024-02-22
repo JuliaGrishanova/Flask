@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block title %}Index{% endblock %}
+
+{% block content %}
+    
+    <p class="important">
+      <h1>Los 10 libros más leídos (y vendidos) en el mundo</h1>
+    </p>
+    <p>Hace ya algún tiempo que anda circulando una lista de los 10 libros más leídos en el mundo,
+      pero nos apetecía compartirla con todos vosotros, e incluso saber si has leído alguno de ello
+      o si estos libros que se mencionan a continuación están entre tus lecturas favoritas.
+
+      Este listado está basado en el número de libros impresos y vendidos en los últimos 50 años
+       (hasta el año 2012. Recientemente 50 Sombras de Grey ha alcanzado la cifra de 100 millones de copias vendidas).
+        Algunos títulos pueden haber tenido más copias impresas que algunos de estos que aparecen aquí,
+         pero un gran número de esos libros no fueron vendidos y por lo tanto no fueron leídos.</p>
+    <div class="text-center mt-5">
+      <div style="max-width: 600px; margin: 0 auto;">
+          <img src="{{ url_for('static', filename='images/descarga.png') }}" alt="libro" class="img-fluid">
+      </div>
+  </div>  
+
+
+{% endblock %}
+
+

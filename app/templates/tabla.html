@@ -1,0 +1,80 @@
+{% extends "base.html" %}
+{% block title %}Tabla{% endblock %}
+{% block content %}
+<br />
+<h3>Ver base de autores</h3>
+<form action="/verLibros" method="post">
+  <label for="autor">ID</label>
+  <select name="id_autor">
+    {% for autor in autores %}
+    <option value="{{autor.id}}">{{autor.id}}</option>
+    {% endfor %}
+  </select>
+  <input type="submit" value="ver">
+</form>
+  
+{% if libros %}
+  <br />
+  <div style="text-align: center; max-width: 800px; margin: 0 auto;">
+    <table style="width: 80%; border-collapse: collapse; border: 1px solid #ddd;">
+      <tr>
+        <th style="border: 1px solid #ddd; padding: 12px; width: 10%;">ID</th>
+        <th style="border: 1px solid #ddd; padding: 12px;">TITULO</th>
+        <th style="border: 1px solid #ddd; padding: 12px; width: 30%;">GENERO</th>
+        <th style="border: 1px solid #ddd; padding: 12px; width: 30%;">ID_AUTOR</th>
+      </tr>
+      {% for libro in libros %}
+      <tr>
+        <td style="border: 1px solid #ddd; padding: 12px;">{{ libro.id }}</td>
+        <td style="border: 1px solid #ddd; padding: 12px; white-space: nowrap;">{{ libro.titulo }}</td>
+        <td style="border: 1px solid #ddd; padding: 12px;">{{ libro.genero }}</td>
+        <td style="border: 1px solid #ddd; padding: 12px;">{{ libro.id_autor }}</td>
+      </tr>
+      {% endfor %}
+    </table>
+  </div>
+{% else %}
+  <p>No hay libros disponibles para el autor seleccionado.</p>
+{% endif %}
+
+<br />
+<h3>Añadir libros</h3>
+<div style="border: 1px;">
+  <form action="/addLibro" method="post">
+    <label for="titulo">Titulo</label>
+    <input type="text" name="titulo" id="" value="" />
+    <label for="genero">Genero</label>
+    <input type="text" name="genero" value="" />
+    <label for="id_autor">Id_Autor</label>
+    <input type="text" name="id_autor" value="" />
+    <input type="submit" value="Add" />
+  </form>
+</div>
+
+<br />
+<form action="/delLibro" method="post">
+  <label for="titulo">ID</label>
+  <select name="id">
+    {% for libro in libros %}
+    <option value="{{libro.id}}">{{libro.id}}</option>
+    {% endfor %}
+  </select>
+  <input type="submit" value="Borrar" />
+</form>
+
+<br />
+<form action="/updateLibro" method="post">
+  <label for="titulo">ID</label>
+  <select name="id">
+    {% for libro in libros %}
+    <option value="{{libro.id}}">{{libro.id}}</option>
+    {% endfor %}
+  </select>
+  <label for="titulo">Titulo</label>
+  <input type="text" name="titulo" id="" value="" />
+  <label for="genero">Genero</label>
+  <input type="text" name="genero" value="" />
+  <input type="submit" value="update" />
+</form>
+
+{% endblock %}
